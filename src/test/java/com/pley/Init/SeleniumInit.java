@@ -7,6 +7,7 @@ import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.logging.Logger;
 
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -23,7 +24,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import com.pley.Indexpage.PleySignupIndexPage;
-import com.sun.jna.Platform;
+
 
 /**
  * Selenium class Initialization
@@ -270,7 +271,7 @@ public class SeleniumInit implements ILoggerStatus {
 			DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
 			caps.setCapability("version", "11");
 			caps.setCapability("public", "public");
-			caps.setCapability("platform", "Windows 8.1");
+			caps.setCapability("platform", Platform.ANY);
 			caps.setCapability("name", "pley Automatin");
 			caps.setCapability("browserName", "");
 			this.driver = new RemoteWebDriver(
