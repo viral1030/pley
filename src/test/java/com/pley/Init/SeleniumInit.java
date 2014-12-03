@@ -267,8 +267,8 @@ public class SeleniumInit implements ILoggerStatus {
 
 		} else if (targetBrowser.contains("saucelab")) {
 
-			DesiredCapabilities caps = DesiredCapabilities.safari();
-			caps.setCapability("version", "7");
+			DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
+			caps.setCapability("version", "11");
 			caps.setCapability("public", "public");
 			caps.setCapability("name", "pley Automatin in mac");
 			this.driver = new RemoteWebDriver(
