@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="QCBS" verbose="10" parallel="false" thread-count="1">
+
+	<!-- Put IP of localhost/Grid Hub machine -->
+	<parameter name="selenium.host" value="localhost" />
+
+	<!-- Put Port of localhost RC/Grid Hub machine -->
+	<parameter name="selenium.port" value="4444" />
+
+
+	<parameter name="selenium.browser" value="firefox" />
+	<parameter name="selenium.url" value="http://ipms.ppadb.co.bw:8090/nexprocure/login" />
+	<!-- Put target browser name as below: 1) Firefox : firefox 2) chrome : 
+		chrome 3) IExplorer : ie8 / ie9 -->
+
+
+	<!-- @NOTE: 1) Un-comment <test> tag to run respective test. 2) Comment 
+		<test> tag to unrun respective test. -->
+
+	<!-- loops value for create organization -->
+	<parameter name="count" value="15" />
+	<!-- <parameter name="count_autherization" value="2" /> <parameter name="count_for_tender_bid" 
+		value="1" /> -->
+	<!-- loops value foe define user -->
+
+
+
+
+	<!-- <test name="Tender Preparation"> <classes> <class name="com.qcbs.verifications.Tender_creation_index"> 
+		<methods> <include name="create_Tender" /> </methods> </class> </classes> 
+		</test> -->
+
+	<!-- <test name="Tender Preparation with data provider"> <classes> <class 
+		name="com.qcbs.verifications.Tender_creation_with_data_provider"> <methods> 
+		<include name="create_Tender" /> </methods> </class> </classes> </test> -->
+
+	<test name="Tender Bidding 1">
+		<classes>
+			<class name="com.qcbs.verifications.Tender_bidding">
+				<methods>
+					<include name="Tender_bid" />
+					<include name="tender_close" />
+					<include name="tender_reencryption" />
+					<include name="tender_open" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<!-- <test name="Tender Bidding 2"> <classes> <class name="com.qcbs.verifications.Tender_bidding"> 
+		<methods> <include name="Tender_bid" /> <include name="tender_close" /> <include 
+		name="tender_reencryption" /> <include name="tender_open" /> </methods> </class> 
+		</classes> </test> -->
+
+
+
+
+
+
+	<test name="Tender committee">
+		<classes>
+			<class name="com.qcbs.verifications.Tender_committee_index">
+				<methods>
+					<include name="Tender_committee" />
+					<include name="commitee_invitation_accept" />
+					<include name="finalize_committee" />
+					<include name="proceed_commitee_member" />
+					<include name="proceed_commitee_chair_person" />
+					<include name="give_feed_back_committee_member" />
+					<include name="give_feedback_chairperson" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

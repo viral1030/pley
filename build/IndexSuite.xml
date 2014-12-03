@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Credible1" verbose="10" parallel="false" thread-count="1">
+
+    
+	<!-- Put IP of localhost/Grid Hub machine -->
+	<parameter name="selenium.host" value="localhost" />
+
+	<!-- Put Port of localhost RC/Grid Hub machine -->
+	<parameter name="selenium.port" value="4444" />
+
+
+	<parameter name="selenium.browser" value="ie11" />
+	<parameter name="selenium.url"	value="https://dev2.pley.com/" />
+	
+		
+	
+  <test name="pley">
+		<classes>
+			<class name="com.pley.index.PleySignupIndex">
+				<methods>
+					<include name="PleySignup" />
+				</methods>
+	   		</class>
+    	</classes>
+</test>
+ 
+<!-- 
+ <test name="Credible_login">
+		<classes>
+			<class name="com.Credible.Index.credible_login_index">
+				<methods>
+					<include name="login_page" />
+				</methods>
+	   		</class>
+    	</classes>
+</test>
+  -->
+</suite>

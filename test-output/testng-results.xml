@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Credible1" duration-ms="639511" started-at="2014-12-02T09:44:34Z" finished-at="2014-12-02T09:55:13Z">
+    <groups>
+    </groups>
+    <test name="pley" duration-ms="639511" started-at="2014-12-02T09:44:34Z" finished-at="2014-12-02T09:55:13Z">
+      <class name="com.pley.index.PleySignupIndex">
+        <test-method status="PASS" signature="fetchSuiteConfiguration(org.testng.ITestContext)[pri:0, instance:com.pley.index.PleySignupIndex@5bbeffcd]" name="fetchSuiteConfiguration" is-config="true" duration-ms="0" started-at="2014-12-02T15:14:34Z" finished-at="2014-12-02T15:14:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@5a60f1ea]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fetchSuiteConfiguration -->
+        <test-method status="PASS" signature="setUp(java.lang.reflect.Method)[pri:0, instance:com.pley.index.PleySignupIndex@5bbeffcd]" name="setUp" is-config="true" duration-ms="10014" started-at="2014-12-02T15:14:34Z" finished-at="2014-12-02T15:14:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.pley.index.PleySignupIndex.PleySignup() throws java.awt.AWTException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="PleySignup()[pri:0, instance:com.pley.index.PleySignupIndex@5bbeffcd]" name="PleySignup" duration-ms="627715" started-at="2014-12-02T15:14:44Z" finished-at="2014-12-02T15:25:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PleySignup -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.pley.index.PleySignupIndex@5bbeffcd]" name="tearDown" is-config="true" duration-ms="1767" started-at="2014-12-02T15:25:11Z" finished-at="2014-12-02T15:25:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=PleySignup status=SUCCESS method=PleySignupIndex.PleySignup()[pri:0, instance:com.pley.index.PleySignupIndex@5bbeffcd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.pley.index.PleySignupIndex -->
+    </test> <!-- pley -->
+  </suite> <!-- Credible1 -->
+</testng-results>
