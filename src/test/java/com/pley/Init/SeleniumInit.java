@@ -270,7 +270,9 @@ public class SeleniumInit implements ILoggerStatus {
 			DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
 			caps.setCapability("version", "11");
 			caps.setCapability("public", "public");
-			caps.setCapability("name", "pley Automatin in mac");
+			caps.setCapability("platform", "Windows 8.1");
+			caps.setCapability("name", "pley Automatin");
+			caps.setCapability("browserName", "");
 			this.driver = new RemoteWebDriver(
 					new URL(
 							"http://viralpatel:c2aa781d-3161-4c7e-ab46-d5a2935abae8@ondemand.saucelabs.com:80/wd/hub"),
