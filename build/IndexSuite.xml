@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Credible1" verbose="10" parallel="false" thread-count="1">
+<suite name="Pley" verbose="10" parallel="false" thread-count="1">
 
     
 	<!-- Put IP of localhost/Grid Hub machine -->
@@ -9,7 +9,7 @@
 	<parameter name="selenium.port" value="4444" />
 
 
-	<parameter name="selenium.browser" value="firefox" />
+	<parameter name="selenium.browser" value="saucelab" />
 	<parameter name="selenium.url"	value="https://dev2.pley.com/" />
 	
 		

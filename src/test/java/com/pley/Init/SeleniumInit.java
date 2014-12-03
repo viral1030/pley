@@ -7,10 +7,7 @@ import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.logging.Logger;
 
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -26,8 +23,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import com.pley.Indexpage.PleySignupIndexPage;
-
-import com.pley.Verification.verifyElement;
+import com.sun.jna.Platform;
 
 /**
  * Selenium class Initialization
@@ -43,7 +39,7 @@ public class SeleniumInit implements ILoggerStatus {
 	protected String testUrl; // Test url
 	protected String seleniumHub; // Selenium hub IP
 	protected String seleniumHubPort; // Selenium hub port
-	protected String targetBrowser; // Target browser
+    public static String targetBrowser; // Target browser
 	protected static String test_data_folder_path = null;
 	protected static String email_init;
 	protected static String email_count;
@@ -84,19 +80,6 @@ public class SeleniumInit implements ILoggerStatus {
 
 		System.out
 				.println("-------------------------------------------------------in fetch config");
-		email_init = testContext.getCurrentXmlTest().getParameter("email");
-		email_count = testContext.getCurrentXmlTest()
-				.getParameter("emailcount");
-		istabverification = testContext.getCurrentXmlTest().getParameter(
-				"FC_with_tab_Verification");
-		check_TC = testContext.getCurrentXmlTest().getParameter(
-				"verify_FC_final_msg_on_specific_data");
-		invalide_validate_email = testContext.getCurrentXmlTest().getParameter(
-				"Check_invalid_emails_validation");
-		validate_email = testContext.getCurrentXmlTest().getParameter(
-				"Check_valid_emails");
-		validate_pass = testContext.getCurrentXmlTest().getParameter(
-				"invalide_password_varification");
 
 		System.out.println("tab verification " + istabverification);
 
@@ -204,7 +187,7 @@ public class SeleniumInit implements ILoggerStatus {
 		} else if (targetBrowser.contains("ie8")) {
 
 			capability = DesiredCapabilities.internetExplorer();
-			capability.setPlatform(Platform.ANY);
+			capability.setPlatform(org.openqa.selenium.Platform.ANY);
 			capability.setBrowserName("internet explorer");
 			// capability.setVersion("8.0");
 			capability
@@ -227,7 +210,7 @@ public class SeleniumInit implements ILoggerStatus {
 							"E:\\Projects\\credible\\credible\\credible\\lib\\chromedriver.exe");
 			System.setProperty("webdriver.chrome.driver",
 					"E:\\Projects\\credible\\credible\\credible\\lib\\chromedriver.exe");
-			capability.setPlatform(Platform.ANY);
+			capability.setPlatform(org.openqa.selenium.Platform.ANY);
 			// System.setProperty("webdriver.chrome.driver","lib/chromedriver.exe");
 
 			// File chromedriver = new File("lib/chromedriver.exe");
@@ -254,20 +237,15 @@ public class SeleniumInit implements ILoggerStatus {
 			capability.setCapability(
 					CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION,
 					true);
-			capability.setBrowserName("internet explorer");
-			
 			capability.setJavascriptEnabled(true);
-			
-			//driver=new InternetExplorerDriver(capability);
-			
 			driver = new RemoteWebDriver(remote_grid, capability);
 		} else if (targetBrowser.contains("safari")) {
 
-			/*File safariplugin = new File("lib/WebDriver-2.safariextz");
+			File safariplugin = new File("lib/WebDriver-2.safariextz");
 			System.out.println("safari driver : "
 					+ safariplugin.getAbsolutePath());
 			System.setProperty("webdriver.safari.driver",
-					safariplugin.getAbsolutePath());*/
+					safariplugin.getAbsolutePath());
 			// driver = new SafariDriver();
 			// SafariDriver profile = new SafariDriver();
 			// SafariOptions options = new SafariOptions();
@@ -277,17 +255,28 @@ public class SeleniumInit implements ILoggerStatus {
 
 			capability = DesiredCapabilities.safari();
 
-			capability.setBrowserName("safari");
+			// capability.setBrowserName("safari");
 			capability.setJavascriptEnabled(true);
 			// capability.setBrowserName("safari");
-			capability.setPlatform(org.openqa.selenium.Platform.ANY);
-			capability.setVersion("7.0.6");
+			// capability.setPlatform(org.openqa.selenium.Platform.MAC);
+			// capability.setVersion("7.0.6");
 			// capability.setCapability(SafariDriver,
 			// profile);
-			// this.driver = new SafariDriver(capability);
 
+			this.driver = new SafariDriver(capability);
+
+		} else if (targetBrowser.contains("saucelab")) {
+
+			DesiredCapabilities caps = DesiredCapabilities.safari();
+			caps.setCapability("version", "7");
+			caps.setCapability("public", "public");
+			caps.setCapability("name", "pley Automatin in mac");
+			this.driver = new RemoteWebDriver(
+					new URL(
+							"http://viralpatel:c2aa781d-3161-4c7e-ab46-d5a2935abae8@ondemand.saucelabs.com:80/wd/hub"),
+					caps);
 		}
-		//driver = new RemoteWebDriver(remote_grid, capability);
+		// driver = new RemoteWebDriver(remote_grid, capability);
 
 		driver.manage().window().maximize();
 

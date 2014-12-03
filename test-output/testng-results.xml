@@ -1,43 +1,271 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
+    <line>
+      <![CDATA[<strong></br>Step 1. open url : https://dev2.pley.com/ </br></strong></br>]]>
+    </line>
+    <line>
+      <![CDATA[url opened successfully</br>]]>
+    </line>
+    <line>
+      <![CDATA[<font color=238E23>--<img src="passed.png"/></font></br></br>]]>
+    </line>
+    <line>
+      <![CDATA[<strong></br>Step 2. Click on 'Start My Free Trial' Button </br></strong></br>]]>
+    </line>
+    <line>
+      <![CDATA[<strong></br>Step 3. Fill 'Create Your Account Detail' and click on 'Continue' button </br></strong></br>]]>
+    </line>
+    <line>
+      <![CDATA[<strong>Data Entered As below :</strong></br>]]>
+    </line>
+    <line>
+      <![CDATA[Jethalal Ghada</br>]]>
+    </line>
+    <line>
+      <![CDATA[Full Name : Jethalal Ghada</br>]]>
+    </line>
+    <line>
+      <![CDATA[Email address :KQORG_ewxfi@Mailinator.com</br>]]>
+    </line>
+    <line>
+      <![CDATA[Password : qwerty</br>]]>
+    </line>
+    <line>
+      <![CDATA[<strong>Click on continue button</strong></br>]]>
+    </line>
+    <line>
+      <![CDATA[<strong></br>Step 4. Fill 'Enter Shipping Information' and click on 'Continue' button </br></strong></br>]]>
+    </line>
+    <line>
+      <![CDATA[<strong>Entered data as below :</strong></br>]]>
+    </line>
+    <line>
+      <![CDATA[Address1 : Addresscgpc</br>]]>
+    </line>
+    <line>
+      <![CDATA[Address2 : Addressffct</br>]]>
+    </line>
+    <line>
+      <![CDATA[City : Ahmedabad</br>]]>
+    </line>
+    <line>
+      <![CDATA[State : Gujarat</br>]]>
+    </line>
+    <line>
+      <![CDATA[Country : India</br>]]>
+    </line>
+    <line>
+      <![CDATA[Zip : 12345</br>]]>
+    </line>
+    <line>
+      <![CDATA[<strong>Click on 'Countinue' Button</strong></br>]]>
+    </line>
+    <line>
+      <![CDATA[<strong></br> Step 5. Fill 'Enter Billing Information' and click on 'Make Payment' button </br></strong></br>]]>
+    </line>
+    <line>
+      <![CDATA[<strong>Entered data as below :</strong></br>]]>
+    </line>
+    <line>
+      <![CDATA[Card Number : 4111 1111 1111 1111</br>]]>
+    </line>
+    <line>
+      <![CDATA[Expires : 12/2019</br>]]>
+    </line>
+    <line>
+      <![CDATA[CVV : 123</br>]]>
+    </line>
+    <line>
+      <![CDATA[<strong>Click on 'Make Payment' Button</strong></br>]]>
+    </line>
+    <line>
+      <![CDATA[User should see Welcome Message like : Welcome, Jethalal!</br>]]>
+    </line>
+    <line>
+      <![CDATA[<font color=238E23>--<img src="passed.png"/></font></br></br>]]>
+    </line>
+    <line>
+      <![CDATA[<strong></br> Step 6. add Pley List</strong></br>]]>
+    </line>
+    <line>
+      <![CDATA[<strong></br> a. Select How many Pleyers? , Gender and Age </br></strong></br>]]>
+    </line>
+    <line>
+      <![CDATA[<strong>data selected As below :</strong></br>]]>
+    </line>
+    <line>
+      <![CDATA[How many Pleyers? : 1 Pleyers</br>]]>
+    </line>
+    <line>
+      <![CDATA[gender : Boy</br>]]>
+    </line>
+    <line>
+      <![CDATA[Age : 3-5Yrs</br>]]>
+    </line>
+    <line>
+      <![CDATA[Click on 'Next' Button</br>]]>
+    </line>
+    <line>
+      <![CDATA[<strong></br> b. Select Themes and Click on 'Create Your Pley List' Button</br></strong></br>]]>
+    </line>
+    <line>
+      <![CDATA[User see message like : You just created your Pleylist. You can edit your pleylist at anytime.</br>]]>
+    </line>
+    <line>
+      <![CDATA[<font color=238E23>--<img src="passed.png"/></font></br></br>]]>
+    </line>
   </reporter-output>
-  <suite name="Credible1" duration-ms="639511" started-at="2014-12-02T09:44:34Z" finished-at="2014-12-02T09:55:13Z">
+  <suite name="Credible1" duration-ms="67295" started-at="2014-12-03T08:44:23Z" finished-at="2014-12-03T08:45:30Z">
     <groups>
     </groups>
-    <test name="pley" duration-ms="639511" started-at="2014-12-02T09:44:34Z" finished-at="2014-12-02T09:55:13Z">
+    <test name="pley" duration-ms="67295" started-at="2014-12-03T08:44:23Z" finished-at="2014-12-03T08:45:30Z">
       <class name="com.pley.index.PleySignupIndex">
-        <test-method status="PASS" signature="fetchSuiteConfiguration(org.testng.ITestContext)[pri:0, instance:com.pley.index.PleySignupIndex@5bbeffcd]" name="fetchSuiteConfiguration" is-config="true" duration-ms="0" started-at="2014-12-02T15:14:34Z" finished-at="2014-12-02T15:14:34Z">
+        <test-method status="PASS" signature="fetchSuiteConfiguration(org.testng.ITestContext)[pri:0, instance:com.pley.index.PleySignupIndex@2ebaa4a4]" name="fetchSuiteConfiguration" is-config="true" duration-ms="12" started-at="2014-12-03T14:14:23Z" finished-at="2014-12-03T14:14:23Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5a60f1ea]]>
+                <![CDATA[org.testng.TestRunner@2ade3569]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fetchSuiteConfiguration -->
-        <test-method status="PASS" signature="setUp(java.lang.reflect.Method)[pri:0, instance:com.pley.index.PleySignupIndex@5bbeffcd]" name="setUp" is-config="true" duration-ms="10014" started-at="2014-12-02T15:14:34Z" finished-at="2014-12-02T15:14:44Z">
+        <test-method status="PASS" signature="setUp(java.lang.reflect.Method)[pri:0, instance:com.pley.index.PleySignupIndex@2ebaa4a4]" name="setUp" is-config="true" duration-ms="12000" started-at="2014-12-03T14:14:23Z" finished-at="2014-12-03T14:14:35Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.pley.index.PleySignupIndex.PleySignup() throws java.awt.AWTException]]>
+                <![CDATA[public void com.pley.index.PleySignupIndex.PleySignup()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="PleySignup()[pri:0, instance:com.pley.index.PleySignupIndex@5bbeffcd]" name="PleySignup" duration-ms="627715" started-at="2014-12-02T15:14:44Z" finished-at="2014-12-02T15:25:11Z">
+        <test-method status="PASS" signature="PleySignup()[pri:0, instance:com.pley.index.PleySignupIndex@2ebaa4a4]" name="PleySignup" duration-ms="55133" started-at="2014-12-03T14:14:35Z" finished-at="2014-12-03T14:15:30Z">
           <reporter-output>
+            <line>
+              <![CDATA[<strong></br>Step 1. open url : https://dev2.pley.com/ </br></strong></br>]]>
+            </line>
+            <line>
+              <![CDATA[url opened successfully</br>]]>
+            </line>
+            <line>
+              <![CDATA[<font color=238E23>--<img src="passed.png"/></font></br></br>]]>
+            </line>
+            <line>
+              <![CDATA[<strong></br>Step 2. Click on 'Start My Free Trial' Button </br></strong></br>]]>
+            </line>
+            <line>
+              <![CDATA[<strong></br>Step 3. Fill 'Create Your Account Detail' and click on 'Continue' button </br></strong></br>]]>
+            </line>
+            <line>
+              <![CDATA[<strong>Data Entered As below :</strong></br>]]>
+            </line>
+            <line>
+              <![CDATA[Jethalal Ghada</br>]]>
+            </line>
+            <line>
+              <![CDATA[Full Name : Jethalal Ghada</br>]]>
+            </line>
+            <line>
+              <![CDATA[Email address :KQORG_ewxfi@Mailinator.com</br>]]>
+            </line>
+            <line>
+              <![CDATA[Password : qwerty</br>]]>
+            </line>
+            <line>
+              <![CDATA[<strong>Click on continue button</strong></br>]]>
+            </line>
+            <line>
+              <![CDATA[<strong></br>Step 4. Fill 'Enter Shipping Information' and click on 'Continue' button </br></strong></br>]]>
+            </line>
+            <line>
+              <![CDATA[<strong>Entered data as below :</strong></br>]]>
+            </line>
+            <line>
+              <![CDATA[Address1 : Addresscgpc</br>]]>
+            </line>
+            <line>
+              <![CDATA[Address2 : Addressffct</br>]]>
+            </line>
+            <line>
+              <![CDATA[City : Ahmedabad</br>]]>
+            </line>
+            <line>
+              <![CDATA[State : Gujarat</br>]]>
+            </line>
+            <line>
+              <![CDATA[Country : India</br>]]>
+            </line>
+            <line>
+              <![CDATA[Zip : 12345</br>]]>
+            </line>
+            <line>
+              <![CDATA[<strong>Click on 'Countinue' Button</strong></br>]]>
+            </line>
+            <line>
+              <![CDATA[<strong></br> Step 5. Fill 'Enter Billing Information' and click on 'Make Payment' button </br></strong></br>]]>
+            </line>
+            <line>
+              <![CDATA[<strong>Entered data as below :</strong></br>]]>
+            </line>
+            <line>
+              <![CDATA[Card Number : 4111 1111 1111 1111</br>]]>
+            </line>
+            <line>
+              <![CDATA[Expires : 12/2019</br>]]>
+            </line>
+            <line>
+              <![CDATA[CVV : 123</br>]]>
+            </line>
+            <line>
+              <![CDATA[<strong>Click on 'Make Payment' Button</strong></br>]]>
+            </line>
+            <line>
+              <![CDATA[User should see Welcome Message like : Welcome, Jethalal!</br>]]>
+            </line>
+            <line>
+              <![CDATA[<font color=238E23>--<img src="passed.png"/></font></br></br>]]>
+            </line>
+            <line>
+              <![CDATA[<strong></br> Step 6. add Pley List</strong></br>]]>
+            </line>
+            <line>
+              <![CDATA[<strong></br> a. Select How many Pleyers? , Gender and Age </br></strong></br>]]>
+            </line>
+            <line>
+              <![CDATA[<strong>data selected As below :</strong></br>]]>
+            </line>
+            <line>
+              <![CDATA[How many Pleyers? : 1 Pleyers</br>]]>
+            </line>
+            <line>
+              <![CDATA[gender : Boy</br>]]>
+            </line>
+            <line>
+              <![CDATA[Age : 3-5Yrs</br>]]>
+            </line>
+            <line>
+              <![CDATA[Click on 'Next' Button</br>]]>
+            </line>
+            <line>
+              <![CDATA[<strong></br> b. Select Themes and Click on 'Create Your Pley List' Button</br></strong></br>]]>
+            </line>
+            <line>
+              <![CDATA[User see message like : You just created your Pleylist. You can edit your pleylist at anytime.</br>]]>
+            </line>
+            <line>
+              <![CDATA[<font color=238E23>--<img src="passed.png"/></font></br></br>]]>
+            </line>
           </reporter-output>
         </test-method> <!-- PleySignup -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.pley.index.PleySignupIndex@5bbeffcd]" name="tearDown" is-config="true" duration-ms="1767" started-at="2014-12-02T15:25:11Z" finished-at="2014-12-02T15:25:13Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.pley.index.PleySignupIndex@2ebaa4a4]" name="tearDown" is-config="true" duration-ms="132" started-at="2014-12-03T14:15:30Z" finished-at="2014-12-03T14:15:30Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=PleySignup status=SUCCESS method=PleySignupIndex.PleySignup()[pri:0, instance:com.pley.index.PleySignupIndex@5bbeffcd] output={null}]]]>
+                <![CDATA[[TestResult name=PleySignup status=SUCCESS method=PleySignupIndex.PleySignup()[pri:0, instance:com.pley.index.PleySignupIndex@2ebaa4a4] output=<strong></br>Step 1. open url : https://dev2.pley.com/ </br></strong></br>]]]>
               </value>
             </param>
           </params>

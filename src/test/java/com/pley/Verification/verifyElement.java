@@ -83,7 +83,7 @@ Common common = new Common(driver);
 	
 /*--------------------------VERIFICATION METHOD------------------------------------------------------------------*/	
 	
-	public void verification_method(WebElement element,String element_name,String element_type,String page_name)
+	public void verificationMethod(WebElement element,String element_name,String element_type,String page_name)
 	{
 		
 		

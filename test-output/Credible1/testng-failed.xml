@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="1" verbose="10" name="Failed suite [Credible1]">
   <parameter name="selenium.url" value="https://dev2.pley.com/"/>
-  <parameter name="selenium.browser" value="ie11"/>
+  <parameter name="selenium.browser" value="safari"/>
   <parameter name="selenium.port" value="4444"/>
   <parameter name="selenium.host" value="localhost"/>
   <test name="pley(failed)">

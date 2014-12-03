@@ -1,9 +1,5 @@
 package com.pley.Init;
 
-
-
-
-
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.io.File;
@@ -27,16 +23,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.Augmenter;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.SessionId;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import org.testng.Assert;
 import org.testng.Reporter;
-
-
 
 /**
  * Define Common Webdriver
@@ -47,8 +42,8 @@ public class Common {
 	Date date = new Date();
 	protected Wait<WebDriver> wait;
 	protected WebDriver driver;
-	//static Mouse mouse = new DesktopMouse();
 
+	// static Mouse mouse = new DesktopMouse();
 
 	public Common(WebDriver driver) {
 
@@ -63,7 +58,6 @@ public class Common {
 	 * @return
 	 */
 
-	
 	public WebElement findElement(String elementName) {
 
 		String locator;
@@ -86,7 +80,7 @@ public class Common {
 						return null;
 					}
 				}
-				
+
 				if (locator.startsWith("id=")) {
 					locator = locator.substring(3); // remove "id=" from locator
 					try {
@@ -146,27 +140,28 @@ public class Common {
 	 * @param element
 	 *            Checkbox element.
 	 */
-	
-	public void scrollTo(WebElement element)
-	{
-		
-		Actions dragger=new Actions(driver);
-		  WebElement draggablePartOfScrollbar = element;
 
-	         // drag downwards
-	      int numberOfPixelsToDragTheScrollbarDown = 50;
-	      for (int i=10;i<500;i=i+numberOfPixelsToDragTheScrollbarDown)
-	      {
-	          try
-	          {  
-	         // this causes a gradual drag of the scroll bar, 10 units at a time
-	         dragger.moveToElement(draggablePartOfScrollbar).clickAndHold().moveByOffset(0,numberOfPixelsToDragTheScrollbarDown).release().perform();
-	         Thread.sleep(1000L);
-	          } catch(Exception e1){}
-	       }
+	public void scrollTo(WebElement element) {
+
+		Actions dragger = new Actions(driver);
+		WebElement draggablePartOfScrollbar = element;
+
+		// drag downwards
+		int numberOfPixelsToDragTheScrollbarDown = 50;
+		for (int i = 10; i < 500; i = i + numberOfPixelsToDragTheScrollbarDown) {
+			try {
+				// this causes a gradual drag of the scroll bar, 10 units at a
+				// time
+				dragger.moveToElement(draggablePartOfScrollbar).clickAndHold()
+						.moveByOffset(0, numberOfPixelsToDragTheScrollbarDown)
+						.release().perform();
+				Thread.sleep(1000L);
+			} catch (Exception e1) {
+			}
+		}
 
 	}
-	
+
 	public void checkChkBox(WebElement element) {
 
 		boolean isCheckBoxSet;
@@ -223,18 +218,19 @@ public class Common {
 
 		/* Copy screenshot to specific folder */
 		try {
-			/*String reportFolder = "target" + File.separator
-		     + "failsafe-reports" + File.separator + "firefox"
-		     + File.separator; */
-		    String reportFolder = "test-output" + File.separator;
+			/*
+			 * String reportFolder = "target" + File.separator +
+			 * "failsafe-reports" + File.separator + "firefox" + File.separator;
+			 */
+			String reportFolder = "test-output" + File.separator;
 			String screenshotsFolder = "screenshots";
 			File screenshotFolder = new File(reportFolder + screenshotsFolder);
 			if (!screenshotFolder.getAbsoluteFile().exists()) {
 				screenshotFolder.mkdir();
 			}
-			FileUtils.copyFile(screenshot, new File(screenshotFolder+ File.separator + nameWithExtention).getAbsoluteFile());
-			
-			
+			FileUtils.copyFile(screenshot, new File(screenshotFolder
+					+ File.separator + nameWithExtention).getAbsoluteFile());
+
 		} catch (IOException e) {
 			this.log("Failed to capture screenshot: " + e.getMessage());
 		}
@@ -254,10 +250,9 @@ public class Common {
 	 *            Message/Log to be reported.
 	 */
 	public void log(String msg) {
-		
+
 		Reporter.log(msg);
-		
-		
+
 	}
 
 	/**
@@ -364,10 +359,11 @@ public class Common {
 		return false;
 	}
 
-	public void waitForElement(WebElement webelement)
-	{
-		(new WebDriverWait(driver, 60000)).until(ExpectedConditions.visibilityOf(webelement));
+	public void waitForElement(WebElement webelement) {
+		(new WebDriverWait(driver, 60000)).until(ExpectedConditions
+				.visibilityOf(webelement));
 	}
+
 	/**
 	 * Checks if given elements is checked.
 	 * 
@@ -383,7 +379,8 @@ public class Common {
 	}
 
 	/**
-	 * Checks whether the needed WebElement is displayed or not using Object of By
+	 * Checks whether the needed WebElement is displayed or not using Object of
+	 * By
 	 * 
 	 * @param elementLocator
 	 * @return
@@ -397,9 +394,11 @@ public class Common {
 	}
 
 	public static void setClipboardData(String string) {
-		   StringSelection stringSelection = new StringSelection(string);
-		   Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
-		}
+		StringSelection stringSelection = new StringSelection(string);
+		Toolkit.getDefaultToolkit().getSystemClipboard()
+				.setContents(stringSelection, null);
+	}
+
 	/**
 	 * Checks whether the visibility of Element Located
 	 * 
@@ -502,10 +501,9 @@ public class Common {
 	 * @return StringBuffer object.
 	 */
 	public static String generateRandomChars(int length) {
-		String random=RandomStringUtils.random(length);
+		String random = RandomStringUtils.random(length);
 		return random;
 	}
-
 
 	/**
 	 * Mouse Hover in Web element
@@ -682,8 +680,6 @@ public class Common {
 		return randomInt;
 	}
 
-
-	
 	/**
 	 * Clears and type new value into given text-box.
 	 * 
@@ -729,25 +725,27 @@ public class Common {
 
 	/**
 	 * Select By Value
+	 * 
 	 * @param element
 	 * @param value
 	 */
-	public void selectFromCombo_by_value(WebElement element,String value)
-	 {
-	  Select select = new Select(element);
-	  select.selectByValue(value);
-	 }
-	
+	public void selectFromCombo_by_value(WebElement element, String value) {
+		Select select = new Select(element);
+		select.selectByValue(value);
+	}
+
 	/**
 	 * Select By Visible Value
+	 * 
 	 * @param element
 	 * @param value
 	 */
-	 public void selectFromComboByVisibleText(WebElement element,String value)
-	 {
-	  Select select = new Select(element);
-	  select.selectByVisibleText(value);;
-	 }
+	public void selectFromComboByVisibleText(WebElement element, String value) {
+		Select select = new Select(element);
+		select.selectByVisibleText(value);
+		;
+	}
+
 	/**
 	 * Wait till ajax call finish.
 	 * 
@@ -804,42 +802,37 @@ public class Common {
 		this.findElement(locator).sendKeys(newValue);
 
 	}
-	
-	public void drag_and_drop(WebElement element, int xoffset, int yoffset)
-	{
+
+	public void drag_and_drop(WebElement element, int xoffset, int yoffset) {
 		Actions action = new Actions(driver);
-		action.dragAndDropBy(element, xoffset, yoffset).build().perform();;
+		action.dragAndDropBy(element, xoffset, yoffset).build().perform();
+		;
 	}
-	
-/*
- * 
- * 
- * Move to any element
- * 
- * @param element name
- * 
- * 
- * 
- * 
- * */	
+
+	/*
+	 * 
+	 * 
+	 * Move to any element
+	 * 
+	 * @param element name
+	 */
 	public void move_to_element(WebElement element) {
 
 		pause(1);
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element).build().perform();
-	
+
 	}
-	
+
 	public void doubleclick(WebElement element)
 
-	 {
+	{
 
-	  Actions action = new Actions(driver);
-	  action.moveToElement(element).doubleClick().build().perform();
+		Actions action = new Actions(driver);
+		action.moveToElement(element).doubleClick().build().perform();
 
-	 }
-	
-	
+	}
+
 	public void log(String msg, final int logger_status) {
 
 		switch (logger_status) {
@@ -879,35 +872,50 @@ public class Common {
 		}
 
 	}
-	
+
 	public void logcase(String msg) {
 
-		Reporter.log("<strong> <h3 style=\"color:DarkViolet\"> " + msg + "</h3> </strong></br>");		
-	
-}
+		Reporter.log("<strong> <h3 style=\"color:DarkViolet\"> " + msg
+				+ "</h3> </strong></br>");
+
+	}
 
 	public void logstep(String msg) {
 
-			Reporter.log("<strong>" + msg + "</strong></br>");		
-		
+		Reporter.log("<strong>" + msg + "</strong></br>");
+
 	}
-	
+
 	public void logverification(String msg) {
 
-		Reporter.log( msg + "</br>");
-	
-}
-	
-	public void Drag_And_drop_JS(WebElement element,String x, String y)
-	{
-		
-			
-			 String xto=x;
-			 String yto=y;
-			 ((JavascriptExecutor)driver).executeScript("function simulate(f,c,d,e){var b,a=null;for(b in eventMatchers)if(eventMatchers[b].test(c)){a=b;break}if(!a)return!1;document.createEvent?(b=document.createEvent(a),a==\"HTMLEvents\"?b.initEvent(c,!0,!0):b.initMouseEvent(c,!0,!0,document.defaultView,0,d,e,d,e,!1,!1,!1,!1,0,null),f.dispatchEvent(b)):(a=document.createEventObject(),a.detail=0,a.screenX=d,a.screenY=e,a.clientX=d,a.clientY=e,a.ctrlKey=!1,a.altKey=!1,a.shiftKey=!1,a.metaKey=!1,a.button=1,f.fireEvent(\"on\"+c,a));return!0} var eventMatchers={HTMLEvents:/^(?:load|unload|abort|error|select|change|submit|reset|focus|blur|resize|scroll)$/,MouseEvents:/^(?:click|dblclick|mouse(?:down|up|over|move|out))$/}; " +
-			 "simulate(arguments[0],\"mousedown\",0,0); simulate(arguments[0],\"mousemove\",arguments[1],arguments[2]); simulate(arguments[0],\"mouseup\",arguments[1],arguments[2]); ",
-			 element,xto,yto);
+		Reporter.log(msg + "</br>");
+
 	}
-	
-	
+
+	public void Drag_And_drop_JS(WebElement element, String x, String y) {
+
+		String xto = x;
+		String yto = y;
+		((JavascriptExecutor) driver)
+				.executeScript(
+						"function simulate(f,c,d,e){var b,a=null;for(b in eventMatchers)if(eventMatchers[b].test(c)){a=b;break}if(!a)return!1;document.createEvent?(b=document.createEvent(a),a==\"HTMLEvents\"?b.initEvent(c,!0,!0):b.initMouseEvent(c,!0,!0,document.defaultView,0,d,e,d,e,!1,!1,!1,!1,0,null),f.dispatchEvent(b)):(a=document.createEventObject(),a.detail=0,a.screenX=d,a.screenY=e,a.clientX=d,a.clientY=e,a.ctrlKey=!1,a.altKey=!1,a.shiftKey=!1,a.metaKey=!1,a.button=1,f.fireEvent(\"on\"+c,a));return!0} var eventMatchers={HTMLEvents:/^(?:load|unload|abort|error|select|change|submit|reset|focus|blur|resize|scroll)$/,MouseEvents:/^(?:click|dblclick|mouse(?:down|up|over|move|out))$/}; "
+								+ "simulate(arguments[0],\"mousedown\",0,0); simulate(arguments[0],\"mousemove\",arguments[1],arguments[2]); simulate(arguments[0],\"mouseup\",arguments[1],arguments[2]); ",
+						element, xto, yto);
+	}
+
+	public void EmbedSaucelabVideo(WebDriver driver) {
+		if (SeleniumInit.targetBrowser.contains("saucelab")) {
+
+			System.out.println("in Saucelab");
+			SessionId sessionId = ((RemoteWebDriver) driver).getSessionId();
+			System.out
+					.println("Session : " + sessionId
+							+ " :  https://saucelabs.com/tests/"
+							+ sessionId.toString());
+			log("Sauce Lab Video : <a href='https://saucelabs.com/tests/"
+					+ sessionId.toString() + "'>Click here</a>");
+			log("<script src='https://saucelabs.com/video-embed/"
+					+ sessionId.toString() + ".js'> </script>");
+		}
+	}
 }

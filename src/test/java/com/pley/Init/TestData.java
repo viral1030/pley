@@ -21,7 +21,7 @@ public class TestData {
 	public String emailName() {
 
 		String emailName = "KQ" + "ORG_"
-				+ RandomStringUtils.random(4, "abcdefghijklmnopqrstuvwxyz")+"@Mailinator.com";
+				+ RandomStringUtils.random(5, "abcdefghijklmnopqrstuvwxyz")+"@Mailinator.com";
 
 		return emailName;
 	}
@@ -35,9 +35,12 @@ public class TestData {
 		return emailName;
 	}
 
-	
-	
-	
+	public String toysSelect() {
+
+		String toy = RandomStringUtils.random(1, "123456789");
+
+		return toy;
+	}
 	
 	
 }
